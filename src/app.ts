@@ -1,13 +1,13 @@
 import express from 'express';
-import { registerController } from './controllers/register-controller';
 import router from './routes';
+import cors from "cors"
 
 function createApp() {
     const app = express()
 
     app.use(express.json())
-
     app.use("/api", router)
+    app.use(cors())
     
     return app
 
